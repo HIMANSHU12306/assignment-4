@@ -1,0 +1,21 @@
+<p>directive works!</p>
+<h1 *ngIf="showHeader">Welcome to Structural Directives!</h1>
+<h1 >Welcome to Component Directives!</h1>
+
+    <div *ngIf="isUserLoggedIn; else loginMessage">
+      <p>Welcome, user!</p>
+    </div>
+    <ng-template #loginMessage>
+      <p>Please log in to access the content.</p>
+    </ng-template>
+
+    <ul>
+      <li *ngFor="let item of items">{{ item }}</li>
+    </ul>
+
+    <div [ngSwitch]="status">
+      <p *ngSwitchCase="'active'">User is active</p>
+      <p *ngSwitchCase="'inactive'">User is inactive</p>
+      <p *ngSwitchDefault>User status is unknown</p>
+    </div>
+  
